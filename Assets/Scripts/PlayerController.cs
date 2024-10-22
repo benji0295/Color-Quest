@@ -12,11 +12,16 @@ public class PlayerController : MonoBehaviour
 
   public float speed = 2.0f;
   public TMP_Text timeText;
-  public double timeLimit;
+  public float timeLimit;
+
+  private Vector3 startingSize;
+  private float startingSpeed;
 
   private void Start()
   {
     ridigbody = GetComponent<Rigidbody>();
+    startingSize = transform.localScale;
+    startingSpeed = speed;
 
     if (timeLimit <= 0)
     {
@@ -50,6 +55,40 @@ public class PlayerController : MonoBehaviour
     else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
     {
       ridigbody.AddForce(Vector3.right * speed);
+    }
+  }
+  private void OnTriggerEnter(Collider other)
+  {
+    if (other.CompareTag("Grow"))
+    {
+      speed = startingSpeed;
+
+      transform.localScale += new Vector3(1, 1, 1);
+      Destroy(other.gameObject);
+    }
+    else if (other.CompareTag("Shrink"))
+    {
+      speed = startingSpeed;
+
+      if (transform.localScale.x > startingSize.x * 0.5f)
+      {
+        transform.localScale -= new Vector3(1, 1, 1);
+      }
+      Destroy(other.gameObject);
+    }
+    else if (other.CompareTag("Fast"))
+    {
+      transform.localScale = startingSize;
+
+      speed += 0.5f;
+      Destroy(other.gameObject);
+    }
+    else if (other.CompareTag("Slow"))
+    {
+      transform.localScale = startingSize;
+
+      speed -= 0.5f;
+      Destroy(other.gameObject);
     }
   }
 }
