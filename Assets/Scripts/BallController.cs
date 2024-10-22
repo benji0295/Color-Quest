@@ -13,7 +13,7 @@ public class BallController : MonoBehaviour
   {
     if (isRedComplete && isBlueComplete && isGreenComplete && isYellowComplete)
     {
-      Debug.Log("Game Over.");
+      UnityEngine.SceneManagement.SceneManager.LoadScene("WinScreen");
     }
   }
   private void OnTriggerEnter(Collider other)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -31,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     if (timeLimit <= 0)
     {
-      Debug.Log("Game Over.");
+      UnityEngine.SceneManagement.SceneManager.LoadScene("LoseScreen");
     }
 
     if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
