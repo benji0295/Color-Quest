@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class BallGenerator : MonoBehaviour
@@ -8,15 +9,16 @@ public class BallGenerator : MonoBehaviour
   public GameObject blueBall;
   public GameObject greenBall;
   public GameObject yellowBall;
-  public float distanceFromGenerator = 5.0f;
-  public float height = 0.1f;
+  public float maxDistanceFromGenerator = 10.0f;
+  public float minDistanceFromGenerator = 3.0f;
+  public float height = 24.0f;
 
   private void Start()
   {
-    var redPosition = Random.Range(-distanceFromGenerator, distanceFromGenerator);
-    var bluePosition = Random.Range(-distanceFromGenerator, distanceFromGenerator);
-    var greenPosition = Random.Range(-distanceFromGenerator, distanceFromGenerator);
-    var yellowPosition = Random.Range(-distanceFromGenerator, distanceFromGenerator);
+    var redPosition = Random.Range(minDistanceFromGenerator, maxDistanceFromGenerator);
+    var bluePosition = Random.Range(minDistanceFromGenerator, maxDistanceFromGenerator);
+    var greenPosition = Random.Range(minDistanceFromGenerator, maxDistanceFromGenerator);
+    var yellowPosition = Random.Range(minDistanceFromGenerator, maxDistanceFromGenerator);
 
     Instantiate(redBall, new Vector3(redPosition, height, redPosition), Quaternion.identity);
     Instantiate(blueBall, new Vector3(bluePosition, height, -bluePosition), Quaternion.identity);
