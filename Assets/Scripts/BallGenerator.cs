@@ -16,14 +16,14 @@ public class BallGenerator : MonoBehaviour
   private void Start()
   {
     var redPosition = Random.Range(minDistanceFromGenerator, maxDistanceFromGenerator);
-    var bluePosition = Random.Range(minDistanceFromGenerator, maxDistanceFromGenerator);
-    var greenPosition = Random.Range(minDistanceFromGenerator, maxDistanceFromGenerator);
     var yellowPosition = Random.Range(minDistanceFromGenerator, maxDistanceFromGenerator);
+    var greenPosition = Random.Range(minDistanceFromGenerator, maxDistanceFromGenerator);
+    var bluePosition = Random.Range(minDistanceFromGenerator, maxDistanceFromGenerator);
 
     Instantiate(redBall, new Vector3(redPosition, height, redPosition), Quaternion.identity);
-    Instantiate(blueBall, new Vector3(bluePosition, height, -bluePosition), Quaternion.identity);
-    Instantiate(greenBall, new Vector3(-greenPosition, height, greenPosition), Quaternion.identity);
-    Instantiate(yellowBall, new Vector3(-yellowPosition, height, -yellowPosition), Quaternion.identity);
+    Instantiate(blueBall, new Vector3(-bluePosition, height, bluePosition), Quaternion.identity);
+    Instantiate(greenBall, new Vector3(-greenPosition, height, -greenPosition), Quaternion.identity);
+    Instantiate(yellowBall, new Vector3(yellowPosition, height, -yellowPosition), Quaternion.identity);
 
   }
 
