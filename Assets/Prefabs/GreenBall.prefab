@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5245613653605502367}
   - component: {fileID: 2762227516885308625}
   - component: {fileID: 425926802495239100}
-  - component: {fileID: 2191486791120409120}
+  - component: {fileID: 7033499737737542459}
   m_Layer: 0
   m_Name: GreenBall
   m_TagString: GreenBall
@@ -134,7 +134,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2191486791120409120
+--- !u!114 &7033499737737542459
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,3 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcae0b2a04bda4db78c9ba227f9426b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  achievementSound: {fileID: 8300000, guid: dde96a96efcaf42459124ffadd96e59c, type: 3}

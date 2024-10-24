@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4995283962864689726}
   - component: {fileID: 80107448024306527}
   - component: {fileID: 8996334193181735807}
-  - component: {fileID: 6665050247623877592}
+  - component: {fileID: 4304586504046127597}
   m_Layer: 0
   m_Name: YellowBall
   m_TagString: YellowBall
@@ -134,7 +134,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6665050247623877592
+--- !u!114 &4304586504046127597
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,3 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcae0b2a04bda4db78c9ba227f9426b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  achievementSound: {fileID: 8300000, guid: dde96a96efcaf42459124ffadd96e59c, type: 3}

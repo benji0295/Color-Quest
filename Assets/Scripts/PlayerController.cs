@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
   private void Start()
   {
     ridigbody = GetComponent<Rigidbody>();
+
     startingSize = transform.localScale;
     startingSpeed = speed;
 

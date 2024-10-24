@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4704882003270224996}
   - component: {fileID: 7877783899044529549}
   - component: {fileID: 6831904727599760758}
-  - component: {fileID: 7697279065016033661}
+  - component: {fileID: 6676200501886209592}
   m_Layer: 0
   m_Name: RedBall
   m_TagString: RedBall
@@ -134,7 +134,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7697279065016033661
+--- !u!114 &6676200501886209592
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,3 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcae0b2a04bda4db78c9ba227f9426b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  achievementSound: {fileID: 8300000, guid: dde96a96efcaf42459124ffadd96e59c, type: 3}

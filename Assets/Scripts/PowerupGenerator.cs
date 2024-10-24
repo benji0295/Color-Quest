@@ -26,7 +26,7 @@ public class PowerupGenerator : MonoBehaviour
       if (currentPowerup == null)
       {
         var randomPowerup = Random.Range(0, powerups.Count);
-        currentPowerup = Instantiate(powerups[randomPowerup], new Vector3(Random.Range(-distanceFromGenerator, distanceFromGenerator), 24.0f, Random.Range(-distanceFromGenerator, distanceFromGenerator)), Quaternion.identity);
+        currentPowerup = Instantiate(powerups[randomPowerup], new Vector3(Random.Range(-distanceFromGenerator, distanceFromGenerator), 25.0f, Random.Range(-distanceFromGenerator, distanceFromGenerator)), Quaternion.identity);
         timer = duration;
       }
       else
