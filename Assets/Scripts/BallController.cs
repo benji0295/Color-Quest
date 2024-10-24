@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
-  private bool isRedComplete = false;
-  private bool isBlueComplete = false;
-  private bool isGreenComplete = false;
-  private bool isYellowComplete = false;
+  public bool isComplete = false;
   private AudioSource audioSource;
+  private int totalBalls = 4;
+  private static int ballsCompleted = 0;
 
   public AudioClip achievementSound;
 
@@ -19,37 +18,49 @@ public class BallController : MonoBehaviour
 
   private void Update()
   {
-    if (isRedComplete && isBlueComplete && isGreenComplete && isYellowComplete)
+    if (ballsCompleted == totalBalls)
     {
       UnityEngine.SceneManagement.SceneManager.LoadScene("WinScreen");
+      ballsCompleted = 0;
     }
   }
 
   private void OnTriggerEnter(Collider other)
   {
-    if (gameObject.CompareTag("RedBall") && other.CompareTag("RedCorner"))
+    if (!isComplete)
     {
-      Debug.Log("Red complete.");
-      audioSource.PlayOneShot(achievementSound);
-      isRedComplete = true;
-    }
-    else if (gameObject.CompareTag("BlueBall") && other.CompareTag("BlueCorner"))
-    {
-      Debug.Log("Blue complete.");
-      audioSource.PlayOneShot(achievementSound);
-      isBlueComplete = true;
-    }
-    else if (gameObject.CompareTag("GreenBall") && other.CompareTag("GreenCorner"))
-    {
-      Debug.Log("Green complete.");
-      audioSource.PlayOneShot(achievementSound);
-      isGreenComplete = true;
-    }
-    else if (gameObject.CompareTag("YellowBall") && other.CompareTag("YellowCorner"))
-    {
-      Debug.Log("Yellow complete.");
-      audioSource.PlayOneShot(achievementSound);
-      isYellowComplete = true;
+      if (gameObject.CompareTag("RedBall") && other.CompareTag("RedCorner"))
+      {
+        Debug.Log("Red complete.");
+        audioSource.PlayOneShot(achievementSound);
+        isComplete = true;
+        ballsCompleted++;
+        Debug.Log($"Completed Ball Count: {ballsCompleted}");
+      }
+      else if (gameObject.CompareTag("BlueBall") && other.CompareTag("BlueCorner"))
+      {
+        Debug.Log("Blue complete.");
+        audioSource.PlayOneShot(achievementSound);
+        isComplete = true;
+        ballsCompleted++;
+        Debug.Log($"Completed Ball Count: {ballsCompleted}");
+      }
+      else if (gameObject.CompareTag("GreenBall") && other.CompareTag("GreenCorner"))
+      {
+        Debug.Log("Green complete.");
+        audioSource.PlayOneShot(achievementSound);
+        isComplete = true;
+        ballsCompleted++;
+        Debug.Log($"Completed Ball Count: {ballsCompleted}");
+      }
+      else if (gameObject.CompareTag("YellowBall") && other.CompareTag("YellowCorner"))
+      {
+        Debug.Log("Yellow complete.");
+        audioSource.PlayOneShot(achievementSound);
+        isComplete = true;
+        ballsCompleted++;
+        Debug.Log($"Completed Ball Count: {ballsCompleted}");
+      }
     }
   }
 }

@@ -13,6 +13,10 @@ public class PlayerController : MonoBehaviour
   public float speed = 2.0f;
   public TMP_Text timeText;
   public float timeLimit;
+  public BallController redBallController;
+  public BallController blueBallController;
+  public BallController greenBallController;
+  public BallController yellowBallController;
 
   private Vector3 startingSize;
   private float startingSpeed;
@@ -39,6 +43,11 @@ public class PlayerController : MonoBehaviour
     if (timeLimit <= 0)
     {
       UnityEngine.SceneManagement.SceneManager.LoadScene("LoseScreen");
+    }
+
+    if (timeLimit > 0 && redBallController.isComplete && blueBallController.isComplete && greenBallController.isComplete && yellowBallController.isComplete)
+    {
+      UnityEngine.SceneManagement.SceneManager.LoadScene("WinScreen");
     }
 
     if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))

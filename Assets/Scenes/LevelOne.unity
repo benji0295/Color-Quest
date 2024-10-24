@@ -1720,6 +1720,10 @@ MonoBehaviour:
   speed: 2
   timeText: {fileID: 479976}
   timeLimit: 0
+  redBallController: {fileID: 6676200501886209592, guid: 91b0acff22eab42c58c24c3393e74352, type: 3}
+  blueBallController: {fileID: 8874934481981456622, guid: 4777dc364b1814058aa0b67f33a6741d, type: 3}
+  greenBallController: {fileID: 7033499737737542459, guid: 04b133211896549f8b2d90efc6c4368d, type: 3}
+  yellowBallController: {fileID: 4304586504046127597, guid: f215918f3364a4c6c8b32159b93156c1, type: 3}
 --- !u!54 &2055958559
 Rigidbody:
   m_ObjectHideFlags: 0
