@@ -13,7 +13,7 @@ public class WinLoseScreen : MonoBehaviour
   {
     if (Input.anyKeyDown)
     {
-      UnityEngine.SceneManagement.SceneManager.LoadScene("LevelOne");
+      UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
   }
 }
